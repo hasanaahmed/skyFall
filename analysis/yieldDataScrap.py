@@ -41,7 +41,7 @@ def getIndex(year):
         temp=[]
         count = 0
 
-    if year <= 2006 and year >= 2003:
+    if year <= 2006 and year >= 2002:
         for item in bsObj.findAll('d:BC_20YEAR'):
             temp.append(item.text)
             count += 1
@@ -53,10 +53,16 @@ def getIndex(year):
 
     data.append(temp[count - 1])
     results = list(map(float, data))
-    slope = (results[1] - results[0]) / 29
+
+    if year <= 2006 and year >= 2002:
+        slope = (results[1] - results[0]) / 19
+
+    else:
+        slope = (results[1] - results[0]) / 29
+
     final.append(slope)
 
-    print("the yield in %i was: %0.07f" % (year, final[0]))
+    print("the index of yield in %i was: %0.07f" % (year, final[0]))
     return(final[0])
 
 if __name__ == '__main__':
