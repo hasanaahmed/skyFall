@@ -63,7 +63,16 @@ def getIndex(year):
     final.append(slope)
 
     print("the index of yield in %i was: %0.07f" % (year, final[0]))
-    return(final[0])
+    if final[0] >= 0.11:
+        return 4
+    elif final[0] >= 0.09 and final[0] < 0.11:
+        return 3
+    elif final[0] >= 0.06 and final[0] < 0.09:
+        return 2
+    elif final[0] >= 0.01 and final[0] < 0.06:
+        return 1
+    else:
+        return 0
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
