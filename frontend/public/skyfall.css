@@ -1,0 +1,23 @@
+#topHeader {
+    text-align: center;
+}
+
+#learnMoreButton {
+    position: relative;
+    left: 45%;
+}
+#backgroundColor{
+    background-color: #65ced8;
+}
+#scenario{
+    max-width: 100%;
+    max-height: 1000px;
+    position: relative;
+    left: 20%;
+}
+#bestphoto{
+    width:500px;
+    height:600px;
+    position: relative;
+    left: 40%;
+}
