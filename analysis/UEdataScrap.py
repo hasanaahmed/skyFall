@@ -11,7 +11,7 @@ def getIndex(year):
     firstIn = sheet.cell(using, 10)
     secondIn = sheet.cell(next, 10)
     index = (firstIn.value - secondIn.value) / 29
-    print("The yield in the %i was %0.07f" % (year, index))
+    print("The index of UE in the %i was %0.07f" % (year, index))
     return(index)
 
 if __name__ == '__main__':
