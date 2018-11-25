@@ -22,22 +22,32 @@
             function changeToTerrible(){
               document.getElementById("backgroundColor").style.backgroundColor = "#5e070f";
               document.getElementById("scenario").src= "images/Terrible Day Scenario copy.jpg";
+              document.getElementById("topTable").style.backgroundColor = "#5e070f";
+              document.getElementById("whiteText").style.color = "#ffffff";
             }
             function changeToBad(){
               document.getElementById("backgroundColor").style.backgroundColor = "#C40552";
               document.getElementById("scenario").src= "images/Bad Day Scenario copy.jpg";
+              document.getElementById("topTable").style.backgroundColor = "#C40552";
+              document.getElementById("whiteText").style.color = "#ffffff";
             }
             function changeToNeutral(){
               document.getElementById("backgroundColor").style.backgroundColor = "#3359bc";
               document.getElementById("scenario").src= "images/Neutral Day Scenario copy.jpg";
+              document.getElementById("topTable").style.backgroundColor = "#3359bc";
+              document.getElementById("whiteText").style.color = "#ffffff";
             }
             function changeToGood(){
               document.getElementById("backgroundColor").style.backgroundColor = "#65ced8";
               document.getElementById("scenario").src= "images/Good Day Scenario copy.jpg";
+              document.getElementById("topTable").style.backgroundColor = "#65ced8";
+              document.getElementById("whiteText").style.color = "#000000";
             }
             function changeToGreat(){
               document.getElementById("backgroundColor").style.backgroundColor = "#C5faff";
               document.getElementById("scenario").src= "images/Great Day Scenario copy.jpg";
+              document.getElementById("topTable").style.backgroundColor = "#C5faff";
+              document.getElementById("whiteText").style.color = "#000000";
             }
     function findRValue(){
       var yearArray = [];
@@ -81,7 +91,7 @@
     }
     </script>
       </div>
-  <body><table bgcolor="#89E894">
+  <body><table id="topTable" bgcolor="#65ced8">
         <div id="backgroundColor">
             <header><tr>
                 <h1 class="w3-red w3-center" style="padding:64px" id="topHeader">The Sky Is Falling!</h1></tr>
@@ -94,13 +104,13 @@
               </div>
             -->
               <div style="float:left;text-align: right"><tr><td>
-                <label for="inputYear"><center><b>Choose a year (between 1990 and 2018): </b></label><br>
+                <label for="inputYear" id="whiteText"><center><b>Choose a year (between 1990 and 2018): </b></label><br>
                 <input class="numBox" type="number" id="inputYear" min="1990" step="1" max="2018" placeholder="Year"><br><br>
-                <label for="yieldWeight"><b>Enter weight factor for yield curve (between 0 and 1): </b></label><br>
+                <label for="yieldWeight" id="whiteText"><b>Enter weight factor for yield curve (between 0 and 1): </b></label><br>
                 <input class="numBox" type="number" id="yieldWeight" min="0" step="0.01" max="1" placeholder="0.60" value="0.60"><br><br>
-                <label for="unemploymentWeight"><b>Enter weight factor for unemployment rate (between 0 and 1): </b></label><br>
+                <label for="unemploymentWeight" id="whiteText"><b>Enter weight factor for unemployment rate (between 0 and 1): </b></label><br>
                 <input class="numBox" type="number" id="unemploymentWeight" min="0" step="0.01" max="1" placeholder="0.25" value="0.25"><br><br>
-                <label for="housingWeight"><b>Enter weight factor for new building permits (between 0 and 1): </b></label><br>
+                <label for="housingWeight" id="whiteText"><b>Enter weight factor for new building permits (between 0 and 1): </b></label><br>
                 <input class="numBox" type="number" id="housingWeight" min="0" step="0.01" max="1" placeholder="0.15" value="0.15"><br><br>
                 </div>
               </div>
