@@ -18,10 +18,17 @@
 
   <body>
     <div id="numBox">
-      <input id="numBox" type="number" onchange="changePermitValue" id="yieldCurve" min="0" step="10" max="100"  placeholder="Yield Curve Multiplier">
-      <input id="numBox" type="number" onchange="changePermitValue" id="unemploymentRate" min="0" step="10" max="100" placeholder="Unemployment Rate Multiplier">
-      <input id="numbBox" type="number" id="buildingPermits" placeholder="New Building Permits" disabled>
+      <input id="numBox" type="number" onchange="changePermit" id="yieldCurve" min="0" step="10" max="50"  placeholder="Yield Curve Multiplier">
+      <input id="numBox" type="number" onchange="changePermit" id="unemploymentRate" min="0" step="10" max="50" placeholder="Unemployment Rate Multiplier">
+      <input id="numbBox" type="number" id="buildingPermits" placeholder="New Building Permits">
     </div>
+    <script>
+    function changePermit(){
+      var yieldValue =  document.getElementById("yieldCurve").value;
+      var unemployValue = document.getElementById("unemploymentRate").value;
+      document.getElementById("buildingPermits").value = 10;
+    }
+    </script>
         <div id="backgroundColor">
             <header>
                 <h1 class="w3-container w3-red w3-center" style="padding:64px" id="topHeader">The Sky Is Falling!</h1>
@@ -52,11 +59,7 @@
                 Created by: Brian, Charles, Hasan, and Jeff during <a href="https://hackwestern.com/" target="_blank">Hack Western 5</a>!
             </p>
 
-            <script>
-            function changePermitValue(){
 
-            }
-            </script>
             <script>
             function changeImage(){
               //something call
