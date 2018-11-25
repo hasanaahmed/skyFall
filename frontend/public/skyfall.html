@@ -40,20 +40,36 @@
               document.getElementById("scenario").src= "images/Great Day Scenario copy.jpg";
             }
     function findRValue(){
-      var yearArray = [1, 2, 3, 3, 3, 1, 1, 1, 1, 1, 0, 2, 3, 3, 3, 3, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 2, 1, 0];
+      var yearArray = [];
+      var yieldArray = [1, 2, 4, 4, 3, 1, 1, 1, 1, 1, 0, 2, 4, 4, 4, 3, 0, 0, 3, 4, 4, 3, 3, 4, 3, 3, 3, 1, 1];
+      var unemploymentArray = [2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 0, 2, 2, 2, 2, 2, 1, 1, 2, 4, 3, 3, 3, 2, 2, 2, 1, 1, 0];
+      var housingArray = [1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1];
+      var yieldWeight = document.getElementById("yieldWeight").value;
+      var unemploymentWeight = document.getElementById("unemploymentWeight").value;
+      var housingWeight = document.getElementById("housingWeight").value;
+      console.log(yieldWeight);
+      console.log(unemploymentWeight);
+      console.log(housingWeight);
+      console.log(parseFloat(yieldWeight) + parseFloat(unemploymentWeight) + parseFloat(housingWeight));
+      if (parseFloat(yieldWeight) + parseFloat(unemploymentWeight) + parseFloat(housingWeight) != 1){
+        alert("The 3 weights must add up to 1!");
+      }
+      for (var i = 0; i < 29; i++){
+        yearArray[i] = yieldWeight*yieldArray[i] + unemploymentWeight*unemploymentArray[i] + housingWeight*housingArray[i];
+      }
       var yearIndex = parseInt(document.getElementById("inputYear").value,10) - 1990;
       console.log(yearIndex);
       console.log(yearArray[yearIndex]);
-      if(yearArray[yearIndex] == 0){
+      if(yearArray[yearIndex] >= 0 && yearArray[yearIndex] < 0.5){
         changeToTerrible();
       }
-      else if (yearArray[yearIndex] == 1){
+      else if (yearArray[yearIndex] >= 0.5 && yearArray[yearIndex] < 1.5){
         changeToBad();
       }
-      else if(yearArray[yearIndex] == 2){
+      else if(yearArray[yearIndex] >= 1.5 && yearArray[yearIndex] < 2.5){
         changeToNeutral();
       }
-      else if(yearArray[yearIndex] == 3){
+      else if(yearArray[yearIndex] >= 2.5 && yearArray[yearIndex] < 3.5){
         changeToGood();
       }
       else {
@@ -78,9 +94,15 @@
               </div>
             -->
               <div style="float:left;text-align: right"><tr><td>
-                <label for="inputYear"><center><b>Choose a Year (between 1990 and 2018): </b></div></label><br><br>
+                <label for="inputYear"><center><b>Choose a year (between 1990 and 2018): </b></label><br>
                 <input class="numBox" type="number" id="inputYear" min="1990" step="1" max="2018" placeholder="Year"><br><br>
-                <label for=""
+                <label for="yieldWeight"><b>Enter weight factor for yield curve (between 0 and 1): </b></label><br>
+                <input class="numBox" type="number" id="yieldWeight" min="0" step="0.01" max="1" placeholder="0.60" value="0.60"><br><br>
+                <label for="unemploymentWeight"><b>Enter weight factor for unemployment rate (between 0 and 1): </b></label><br>
+                <input class="numBox" type="number" id="unemploymentWeight" min="0" step="0.01" max="1" placeholder="0.25" value="0.25"><br><br>
+                <label for="housingWeight"><b>Enter weight factor for new building permits (between 0 and 1): </b></label><br>
+                <input class="numBox" type="number" id="housingWeight" min="0" step="0.01" max="1" placeholder="0.15" value="0.15"><br><br>
+                </div>
               </div>
               <!--
               <div style="float:left;">
