@@ -62,3 +62,11 @@ text-shadow:none;
 .w3-left{
   transform: translateY(-19px);
 }
+
+#chunk {
+  margin-left: 30px;
+}
+
+#pici {
+  margin-left: 90px;
+}
