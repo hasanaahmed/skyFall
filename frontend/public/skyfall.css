@@ -1,5 +1,7 @@
 #topHeader {
     text-align: center;
+    font-weight:bold;
+    font-family: "Lucida Console"
 }
 
 #learnMoreButton {
@@ -13,7 +15,7 @@
     max-width: 100%;
     max-height: 1000px;
     position: relative;
-    left: 20%;
+    align: center
 }
 #bestphoto{
     width:500px;
