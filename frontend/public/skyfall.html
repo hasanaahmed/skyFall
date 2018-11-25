@@ -51,7 +51,7 @@
       console.log(unemploymentWeight);
       console.log(housingWeight);
       console.log(parseFloat(yieldWeight) + parseFloat(unemploymentWeight) + parseFloat(housingWeight));
-      if (parseFloat(yieldWeight) + parseFloat(unemploymentWeight) + parseFloat(housingWeight) != 1){
+      if (parseFloat(yieldWeight) + parseFloat(unemploymentWeight) + parseFloat(housingWeight) <= 0.995){
         alert("The 3 weights must add up to 1!");
       }
       for (var i = 0; i < 29; i++){
