@@ -64,20 +64,22 @@ def getIndex(year):
 
     print("the index of yield in %i was: %0.07f" % (year, final[0]))
     if final[0] >= 0.11:
-        return 4
+        text_file.write("%i: 4\n" % (year))
     elif final[0] >= 0.09 and final[0] < 0.11:
-        return 3
+        text_file.write("%i: 3\n" % (year))
     elif final[0] >= 0.06 and final[0] < 0.09:
-        return 2
+        text_file.write("%i: 2\n" % (year))
     elif final[0] >= 0.01 and final[0] < 0.06:
-        return 1
+        text_file.write("%i: 1\n" % (year))
     else:
-        return 0
+        text_file.write("%i: 0\n" % (year))
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         year = int(sys.argv[1])
         getIndex(year)
     else:
-        for i in range(2009, 2019, 3):
+        text_file = open("yield.txt", "w")
+        for i in range(1990, 2019, 1):
             getIndex(i)
+        text_file.close()

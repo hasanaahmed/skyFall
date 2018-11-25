@@ -10,7 +10,7 @@ def getIndex(year):
     good = 1.5
     neut = 0
     bad = -1.38
-    using = year - 1302
+    using = year - 1302 - (12 * (2018 - year))
     other = using - 25
     first = sheet.cell(using, 1)
     second = sheet.cell(other, 1)
@@ -19,19 +19,22 @@ def getIndex(year):
     print("The index in %i was %0.07f" % (year, input))
 
     if input >= vGood:
-        return 4
+        text_file.write("%i: 4\n" % (year))
     elif input >= good and input < vGood:
-        return 3
+        text_file.write("%i: 3\n" % (year))
     elif input >= neut and input < good:
-        return 2
+        text_file.write("%i: 2\n" % (year))
     elif input >= bad and input < neut:
-        return 1
+        text_file.write("%i: 1\n" % (year))
     else:
-        return 0
+        text_file.write("%i: 0\n" % (year))
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         year = int(sys.argv[1])
         getIndex(year)
     else:
-        getIndex(2018)
+        text_file = open("bp.txt", "w")
+        for i in range(1990, 2019, 1):
+            getIndex(i)
+        text_file.close()

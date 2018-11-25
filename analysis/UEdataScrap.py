@@ -16,20 +16,22 @@ def getIndex(year):
     print("The rate of UE in %i was %0.07f" % (year, input.value))
 
     if input.value >= vGood.value:
-        return 4
+        text_file.write("%i: 4\n" % (year))
     elif input.value >= good.value and input.value < vGood.value:
-        return 3
+        text_file.write("%i: 3\n" % (year))
     elif input.value >= neut.value and input.value < good.value:
-        return 2
+        text_file.write("%i: 2\n" % (year))
     elif input.value >= bad and input.value < neut.value:
-        return 1
+        text_file.write("%i: 1\n" % (year))
     else:
-        return 0
+        text_file.write("%i: 0\n" % (year))
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         year = int(sys.argv[1])
         getIndex(year)
     else:
-        for i in range(2009, 2019, 3):
+        text_file = open("ue.txt", "w")
+        for i in range(1990, 2019, 1):
             getIndex(i)
+        text_file.close()
