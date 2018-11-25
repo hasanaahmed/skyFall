@@ -102,8 +102,9 @@
                 <input class="numBox" type="number" id="yieldCurve" min="0" step="10" max="100"  placeholder="Yield Curve Multiplier in %Percentage">
               </div>
             -->
-              <div style="float:left;text-align: right"><tr><td>
-                <label for="inputYear" id="whiteText"><center><b>Choose a year (between 1990 and 2018): </b></label><br>
+              <div style="float:left;text-align: right" ><tr><td>
+                <div id = "chunk">
+                <label for="inputYear" id="whiteText"><b>Choose a year (between 1990 and 2018): </b></label><br>
                 <input class="numBox" type="number" id="inputYear" min="1990" step="1" max="2018" placeholder="Year"><br><br>
                 <label for="yieldWeight" id="whiteText"><b>Enter weight factor for yield curve (between 0 and 1): </b></label><br>
                 <input class="numBox" type="number" id="yieldWeight" min="0" step="0.01" max="1" placeholder="0.60" value="0.60"><br><br>
@@ -111,6 +112,9 @@
                 <input class="numBox" type="number" id="unemploymentWeight" min="0" step="0.01" max="1" placeholder="0.25" value="0.25"><br><br>
                 <label for="housingWeight" id="whiteText"><b>Enter weight factor for new building permits (between 0 and 1): </b></label><br>
                 <input class="numBox" type="number" id="housingWeight" min="0" step="0.01" max="1" placeholder="0.15" value="0.15"><br><br>
+                <button class="w3-button w3-center w3-black w3-padding-large w3-large" form="form1" onclick="findRValue()" value="Submit">Submit</button>
+                <button class="w3-button w3-center w3-white w3-padding-large w3-large" form="form1" onclick="downloadRaw()" value="Raw Data">Raw Data</button></td>
+              </div>
                 </div>
               </div>
               <!--
@@ -119,10 +123,9 @@
                 <input class="numBox" type="number" id="buildingPermits" placeholder="Automatically Done">
               </div>
             -->
-                <button class="w3-button w3-center w3-black w3-padding-large w3-large" form="form1" onclick="findRValue()" value="Submit">Submit</button>
-                <button class="w3-button w3-center w3-white w3-padding-large w3-large" form="form1" onclick="downloadRaw()" value="Raw Data">Raw Data</button></td>
-            </form><td width = "50%"><div style="float:center;width:50%;"><center>
-            <img class = "w3-" id="scenario" src="images/Good Day Scenario copy.jpg"/></center></div></td></tr></table>
+
+          </form><td width = "50%"><div style="float:center;width:50%;"><div id = "pici"><center>
+            <img class = "w3-center" id="scenario" src="images/Good Day Scenario copy.jpg"/></center></div></div></td><td><b>This website displays the likelihood of a North American economic recession occurring within 1-2 years, based on three economic indicators (the details of which can be found below).<b></td></tr></table>
         </div><table bgcolor="#ffb347"><tr><br><br><br>
         <h3 id="learnMoreHeader"><b>Learn more about the recession indicators we use:</b></h3></tr>
         <div id="learnMoreHeader"><tr><center>
