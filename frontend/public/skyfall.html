@@ -9,6 +9,32 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--script src="skyfall.js"></script>-->
+        <style>
+            .accordion {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: 0.4s;
+            }
+            
+            .active, .accordion:hover {
+                background-color: #ccc; 
+            }
+            
+            .panel {
+                padding: 0 18px;
+                display: none;
+                background-color: white;
+                overflow: hidden;
+            }
+            </style>
         <style>
                 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -48,18 +74,67 @@
             </form>
             <img class = "w3-" id="scenario" src="images/Good Day Scenario copy.jpg"/>
         </div>
+        <h4 id="learnMoreHeader">Learn more about the recession indicators we use:</h4>
+        <div id="learnMoreHeader">
+          <button type="button" class="w3-button w3-center w3-grey w3-padding-large w3-large" onclick="learnMoreYieldCurve()">Yield Curve</button>
+          
+          <button type="button" class="w3-button w3-center w3-grey w3-padding-large w3-large" onclick="learnMoreUnemployment()">Unemployment Rate</button>
+
+          <button type="button" class="w3-button w3-center w3-grey w3-padding-large w3-large" onclick="learnMoreHousing()">Building Permits for New Private Housing Units</button>
+        </div>
+        <script>
+          function learnMoreYieldCurve(){
+            var yieldCurve = "Yield curves outline the return an investor would receive for a US treasury bond. The yield curve maps the different returns that an investor would receive depending on how long they are willing to loan the government money. When the economy is healthy, longer term bonds will have a higher return which creates a positive slope in the yield curve. When the economy is about to enter a recession, shorter term bonds will have a higher return which creates a negative slope in the yield curve. This inverted yield curve occurs because investors have less faith in future prospects of the economy.";
+            var yieldPara = document.getElementById("learnMoreYieldCurve");
+            while (yieldPara.firstChild) {
+              yieldPara.removeChild(yieldPara.firstChild);
+            }
+            yieldPara.appendChild(document.createTextNode(yieldCurve));
+            document.getElementById("learnMoreHousing").innerHTML = "";
+            document.getElementById("learnMoreUnemployment").innerHTML = "";
+          }
+          function learnMoreHousing(){
+            //var housingPermits = "Building Permits for New Private Housing Units decrease prior to a recession because there are fewer investors interested in housing investments. Less investment in housing indicates that there is a declining demand for housing, which implies reduced consumer spending. This reduced consumer spending can lead to a recession.";
+            //var housingPara = document.getElementById("learnMoreHousing");
+            //housingPara.appendChild(document.createTextNode(housingPermits));
+            document.getElementById("learnMoreHousing").innerHTML = "Building Permits for New Private Housing Units decrease prior to a recession because there are fewer investors interested in housing investments. Less investment in housing indicates that there is a declining demand for housing, which implies reduced consumer spending. This reduced consumer spending can lead to a recession.";
+            document.getElementById("learnMoreYieldCurve").innerHTML = "";
+            document.getElementById("learnMoreUnemployment").innerHTML = "";
+          }
+          function learnMoreUnemployment(){
+            document.getElementById("learnMoreUnemployment").innerHTML = "While a lower unemployment rate may typically be associated with a stronger economy, a very low unemployment rate (loosely defined as below 4% in the USA) may also signal the imminent end of a bull market. This is because by the time the unemployment rate reaches this low point, the market has nearly reached maturity, growth is slowing, and interest rates are rising, which can ultimately lead to a recession.";
+            document.getElementById("learnMoreYieldCurve").innerHTML = "";
+            document.getElementById("learnMoreHousing").innerHTML = "";
+          }
+        </script>
+        <!--
         <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
             <h3>20 Most Recent Reactions</h3>
         </div>
-        <img id="bestphoto" src="images/hackwesternbestfeaturefinal.jpg" onclick="alert('Bitches call me daddy in the sheets and Rap God in the streets')"/>
+        -->
+        <!--<img id="bestphoto" src="images/hackwesternbestfeaturefinal.jpg" onclick="alert('Bitches call me daddy in the sheets and Rap God in the streets')"/>-->
+        <div>
+          <p id="learnMoreYieldCurve"> </p>
+          <p id="learnMoreHousing"> </p>
+          <p id="learnMoreUnemployment"> </p>
+        </div>
+        
         <footer class="w3-container w3-padding-64 w3-center w3-opacity">
             <div class="w3-xlarge w3-padding-32">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+              Brian Lim:
+                <!--<i class="fa fa-facebook-official w3-hover-opacity"></i>
                 <i class="fa fa-instagram w3-hover-opacity"></i>
                 <i class="fa fa-snapchat w3-hover-opacity"></i>
                 <i class="fa fa-pinterest-p w3-hover-opacity"></i>
                 <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
+                -->
+                <a href="https://www.linkedin.com/in/brian-lim-49737013b/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+              <br>
+              Charles Lau:  <a href="https://www.linkedin.com/in/charles-lau/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+              <br>
+              Hasan Ahmed: <a href="https://www.linkedin.com/in/hasanahmed98/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+              <br>
+              Jeff Zhang: <a href="https://www.linkedin.com/in/jeff-zhang/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
             </div>
             <p>
                 Created by: Brian, Charles, Hasan, and Jeff during <a href="https://hackwestern.com/" target="_blank">Hack Western 5</a>!
@@ -76,6 +151,22 @@
               document.getElementById("scenario").src= "images/Terrible Day Scenario copy.jpg";
             }
             </script>
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+                
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    });
+                }
+                </script>
         </footer>
     </body>
 </html>

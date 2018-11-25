@@ -15,7 +15,7 @@
     max-width: 100%;
     max-height: 1000px;
     position: relative;
-    align: center
+    align: center;
 }
 #bestphoto{
     width:500px;
@@ -50,4 +50,8 @@ width:100px;
 border-color: #0066A2;
 font: bold 15px arial, sans-serif;
 text-shadow:none;
+}
+
+#learnMoreHeader{
+  text-align: center;
 }
