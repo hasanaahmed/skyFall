@@ -41,7 +41,7 @@
             }
     function findRValue(){
       var yearArray = [1, 2, 3, 3, 3, 1, 1, 1, 1, 1, 0, 2, 3, 3, 3, 3, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 2, 1, 0];
-      var yearIndex = parseInt(document.getElementById("unemploymentRate").value,10) - 1990;
+      var yearIndex = parseInt(document.getElementById("inputYear").value,10) - 1990;
       console.log(yearIndex);
       console.log(yearArray[yearIndex]);
       if(yearArray[yearIndex] == 0){
@@ -75,8 +75,9 @@
               </div>
             -->
               <div style="float:left;text-align: right"><tr><td>
-                <label for="unemploymentRate"><center><b>Choose a Year (between 1990 and 2018): </b></div></label><br><br>
-                <input class="numBox" type="number" id="unemploymentRate" min="1990" step="1" max="2018" placeholder="Year"><br><br>
+                <label for="inputYear"><center><b>Choose a Year (between 1990 and 2018): </b></div></label><br><br>
+                <input class="numBox" type="number" id="inputYear" min="1990" step="1" max="2018" placeholder="Year"><br><br>
+                <label for=""
               </div>
               <!--
               <div style="float:left;">
