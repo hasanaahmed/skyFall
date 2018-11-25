@@ -15,33 +15,44 @@
                 .fa-anchor,.fa-coffee {font-size:200px}
         </style>
     </head>
-
-  <body>
-    <div id="numBox">
-      <input id="numBox" type="number" onchange="changePermit" id="yieldCurve" min="0" step="10" max="50"  placeholder="Yield Curve Multiplier">
-      <input id="numBox" type="number" onchange="changePermit" id="unemploymentRate" min="0" step="10" max="50" placeholder="Unemployment Rate Multiplier">
-      <input id="numbBox" type="number" id="buildingPermits" placeholder="New Building Permits">
-    </div>
+    <form id="inpBoxes" id="form1">
+      <div style="float:left;margin-right:20px;">
+        <label for="yieldCurve">Yield Curve Multiplier</label>
+        <input class="numBox" type="number" id="yieldCurve" min="0" step="10" max="100"  placeholder="Yield Curve Multiplier in %Percentage">
+      </div>
+      <div style="float:left;">
+        <label for="unemploymentRate">Unemployment Rate Multiplier</label>
+        <input class="numBox" type="number" id="unemploymentRate" min="0" step="10" max="100" placeholder="Unemployment Rate Multiplier in %Percentage">
+      </div>
+      <div style="float:left;">
+        <label for="buildingPermits">Building Permits Multiplier</label>
+        <input class="numBox" type="number" id="buildingPermits" placeholder="Automatically Done">
+      </div>
+    </form>
+      <button form="form1" onclick="findRValue()" value="Submit">Submit</button>
     <script>
-    function changePermit(){
-      var yieldValue =  document.getElementById("yieldCurve").value;
-      var unemployValue = document.getElementById("unemploymentRate").value;
-      document.getElementById("buildingPermits").value = 10;
+    function findRValue(){
+      if(parseInt(document.getElementById("unemploymentRate").value,10) > 50){
+        changeToTerrible();
+      }
+      else {
+        changeToBad();
+      }
     }
     </script>
+      </div>
+  <body>
         <div id="backgroundColor">
             <header>
                 <h1 class="w3-container w3-red w3-center" style="padding:64px" id="topHeader">The Sky Is Falling!</h1>
             </header>
 
             <img class = "w3-" id="scenario" src="images/Good Day Scenario copy.jpg"/>
-
-            <button type="button" onclick="loadDoc()">Request data</button>
         </div>
         <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
             <h3>20 Most Recent Reactions</h3>
         </div>
-  <button type="button" onclick="changeImage()"> CHANGE IT </button>
+  <button type="button" onclick="changeToBad()"> CHANGE IT </button>
         <br>
         <button type="button" id="learnMoreButton" class="w3-button w3-center w3-black w3-padding-large w3-large w3-margin-top" onclick="alert('Oh fuck, shit, bitch! \n YEAH SHECK WES AND IM GETTING REALLY RICH (CHING-CHING!) \n SEE HOW I CAUGHT IT CUZ IM REALLY WITH THE SHITS (PING-PING!) \n SEE ME IN THE STREETS AND I BE REALLY WIT A (CLING-CLING!), WIT A \n BAD BITCH (BITCH!)')">Click me to get lit</button>
         <br>
@@ -58,38 +69,16 @@
             <p>
                 Created by: Brian, Charles, Hasan, and Jeff during <a href="https://hackwestern.com/" target="_blank">Hack Western 5</a>!
             </p>
-
-
             <script>
-            function changeImage(){
-              //something call
-              var badPic ="images/Bad Day Scenario copy.jpg";
-              var goodPic ="images/Good Day Scenario copy.jpg";
-              var terriblePic ="images/Terrible Day Scenario copy.jpg";
-              var neutralPic = "images/Neutral Day Scenario copy.jpg";
-              var greatPic = "images/Great Day Scenario copy.jpg";
-
-              document.getElementById("scenario").src= badPic;
+            function changeToBad(){
+              document.getElementById("scenario").src= "images/Bad Day Scenario copy.jpg";
             }
             </script>
             <script>
-            function loadDoc(){
-              var xhttp = new XMLHttpRequest();
-              xttp.onreadystatechange = function(){
-                if (this.readyState ==4 && this.status ==200){
-                  document.getElementById("pic") = this.responseText;
-                }
-              };
-              xhttp.open("GET","demo_get.asp", true);
-              xhttp.send();
+            function changeToTerrible(){
+              document.getElementById("scenario").src= "images/Terrible Day Scenario copy.jpg";
             }
             </script>
         </footer>
-
-
-
-
     </body>
-
-
 </html>

@@ -21,6 +21,21 @@
     position: relative;
     left: 40%;
 }
-#numBox{
+.numBox{
+  width: 300px; height: 40px
+}
+#inpBoxes{
+  margin-top: 20px;
   text-align: center;
+}
+
+.formButton {
+background: #0066A2;
+color: white;
+border-style: outset;
+height:40px;
+width:100px;
+border-color: #0066A2;
+font: bold 15px arial, sans-serif;
+text-shadow:none;
 }
