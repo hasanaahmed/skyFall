@@ -1,4 +1,7 @@
-{ year: 1990, yield: 1, ue: 2, permit: 1}
+({ year: 1990,
+   yield: 1,
+    ue: 2,
+    permit: 1},
 { year: 1991, yield: 2, ue: 2, permit: 1}
 { year: 1992, yield: 4, ue: 2, permit: 1}
 { year: 1993, yield: 4, ue: 2, permit: 1}
@@ -26,4 +29,4 @@
 { year: 2015, yield: 3, ue: 2, permit: 2}
 { year: 2016, yield: 3, ue: 1, permit: 2}
 { year: 2017, yield: 1, ue: 1, permit: 2}
-{ year: 2018, yield: 1, ue: 0, permit: 1}
+{ year: 2018, yield: 1, ue: 0, permit: 1})

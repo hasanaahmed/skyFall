@@ -23,6 +23,28 @@
     position: relative;
     left: 40%;
 }
-#numBox{
+
+#buildingPermits{
+  margin-left: 20px;
+}
+
+.numBox{
+  width: 300px; height: 40px
+}
+#inpBoxes{
+  margin-left: 40px;
+  margin-top: 20px;
   text-align: center;
+}
+
+.formButton {
+  margin-top: 20px;
+background: #0066A2;
+color: white;
+border-style: outset;
+height:40px;
+width:100px;
+border-color: #0066A2;
+font: bold 15px arial, sans-serif;
+text-shadow:none;
 }
