@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!--script src="skyfall.js"></script>-->
-     
+
         <style>
                 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
                 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -18,7 +18,7 @@
         </style>
     </head>
     <script>
-      
+
             function changeToTerrible(){
               document.getElementById("backgroundColor").style.backgroundColor = "#5e070f";
               document.getElementById("scenario").src= "images/Terrible Day Scenario copy.jpg";
@@ -62,10 +62,11 @@
     }
     </script>
       </div>
-  <body>
+  <body><table bgcolor="#89E894">
         <div id="backgroundColor">
-            <header>
-                <h1 class="w3-container w3-red w3-center" style="padding:64px" id="topHeader">The Sky Is Falling!</h1>
+            <header><tr>
+                <h1 class="w3-container w3-red w3-center" style="padding:40px" id="topHeader"><img class = "w3-container w3-left" id="logo" src="images/image.png" height = "80" width = "80"/>The Sky Is Falling!</h1></tr>
+
             </header>
             <form id ="inpBoxes" id="form1">
               <!--<div style="float:left;margin-right:20px;">
@@ -73,9 +74,9 @@
                 <input class="numBox" type="number" id="yieldCurve" min="0" step="10" max="100"  placeholder="Yield Curve Multiplier in %Percentage">
               </div>
             -->
-              <div style="float:left;">
-                <label for="unemploymentRate">Year (between 1990 and 2018): </label>
-                <input class="numBox" type="number" id="unemploymentRate" min="1990" step="1" max="2018" placeholder="Year">
+              <div style="float:left;text-align: right"><tr><td>
+                <label for="unemploymentRate"><center><b>Choose a Year (between 1990 and 2018): </b></div></label><br><br>
+                <input class="numBox" type="number" id="unemploymentRate" min="1990" step="1" max="2018" placeholder="Year"><br><br>
               </div>
               <!--
               <div style="float:left;">
@@ -83,17 +84,17 @@
                 <input class="numBox" type="number" id="buildingPermits" placeholder="Automatically Done">
               </div>
             -->
-                <button class="w3-button w3-center w3-black w3-padding-large w3-large" form="form1" onclick="findRValue()" value="Submit">Submit</button>
-            </form>
-            <img class = "w3-" id="scenario" src="images/Good Day Scenario copy.jpg"/>
-        </div>
-        <h4 id="learnMoreHeader">Learn more about the recession indicators we use:</h4>
-        <div id="learnMoreHeader">
-          <button type="button" class="w3-button w3-center w3-grey w3-padding-large w3-large" onclick="learnMoreYieldCurve()">Yield Curve</button>
-          
-          <button type="button" class="w3-button w3-center w3-grey w3-padding-large w3-large" onclick="learnMoreUnemployment()">Unemployment Rate</button>
+                <button class="w3-button w3-center w3-black w3-padding-large w3-large" form="form1" onclick="findRValue()" value="Submit">Submit</button></center></td>
+            </form><td width = "50%"><div style="float:center;width:50%;"><center>
+            <img class = "w3-" id="scenario" src="images/Good Day Scenario copy.jpg"/></center></div></td></tr></table>
+        </div><table bgcolor="#ffb347"><tr><br><br><br>
+        <h3 id="learnMoreHeader"><b>Learn more about the recession indicators we use:</b></h3></tr>
+        <div id="learnMoreHeader"><tr><center>
+          <button type="button" class="w3-button w3-center w3-black w3-padding-large w3-large" onclick="learnMoreYieldCurve()">Yield Curve</button>
 
-          <button type="button" class="w3-button w3-center w3-grey w3-padding-large w3-large" onclick="learnMoreHousing()">Building Permits for New Private Housing Units</button>
+          <button type="button" class="w3-button w3-center w3-black w3-padding-large w3-large" onclick="learnMoreUnemployment()">Unemployment Rate</button>
+
+          <button type="button" class="w3-button w3-center w3-black w3-padding-large w3-large" onclick="learnMoreHousing()">Building Permits for New Private Housing Units</button></center></tr></table>
         </div>
         <script>
           function learnMoreYieldCurve(){
@@ -131,10 +132,10 @@
           <p id="learnMoreHousing"> </p>
           <p id="learnMoreUnemployment"> </p>
         </div>
-        
+
         <footer class="w3-container w3-padding-64 w3-center w3-opacity">
             <div class="w3-xlarge w3-padding-32">
-              
+
                 <!--<i class="fa fa-facebook-official w3-hover-opacity"></i>
                 <i class="fa fa-instagram w3-hover-opacity"></i>
                 <i class="fa fa-snapchat w3-hover-opacity"></i>
@@ -143,15 +144,15 @@
                 -->
             </div>
             <p>
-                <b>Created by</b> 
-                <br/> 
-                Brian Lim: <a href="https://www.linkedin.com/in/brian-lim-49737013b/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a> 
+                <b>Created by</b>
+                <br/>
+                Brian Lim: <a href="https://www.linkedin.com/in/brian-lim-49737013b/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
                 <br/>
                 Charles Lau: <a href="https://www.linkedin.com/in/charles-lau/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
                 <br>
                 Hasan Ahmed: <a href="https://www.linkedin.com/in/hasanahmed98/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-                <br> 
-                Jeff Zhang: <a href="https://www.linkedin.com/in/jeff-zhang/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a> 
+                <br>
+                Jeff Zhang: <a href="https://www.linkedin.com/in/jeff-zhang/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
                 <br/>
                 during <a href="https://hackwestern.com/" target="_blank">Hack Western 5</a>!
             </p>
